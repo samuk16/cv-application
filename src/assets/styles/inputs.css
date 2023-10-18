@@ -1,0 +1,57 @@
+:root{
+    --text-label: #A0A0A0;
+    --btn-active: #484848;
+    --text-label-active: #484848;
+}
+
+
+.style-label{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-label);
+}
+
+.containerInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: #1D1C1C;
+    padding: 20px;
+    border-radius: 16px;
+
+}
+
+.style-label > input{
+
+
+    border-radius: 8px;
+    padding: 10px;
+    border-style: none;
+    outline: none;
+    transition: all .15s ease-in-out;
+
+}
+
+.style-label > input:focus{
+
+    outline-color: #1D1C1C;
+    background-color:var(--btn-active);
+
+}
+/* .style-label:focus-within {
+
+    color: var(--text-label-active);
+
+} */
+
+.containerName,.style-twoInputs{
+
+    display: flex;
+    gap: 10px;
+
+
+}
+

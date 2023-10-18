@@ -1,0 +1,35 @@
+:root{
+    --btn-active: #3F3F3F;
+    
+}
+
+
+.style-btn{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #2D2D2D;
+
+    padding: 5px;
+
+    border-style: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    max-width: 34px;
+    max-height: 34px;
+
+}
+
+/* .style-btn:active{
+
+    background-color:var(--btn-active);
+} */
+
+.style-btn:hover{
+
+    background-color:var(--btn-active);
+}
+

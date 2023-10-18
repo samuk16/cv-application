@@ -1,0 +1,21 @@
+:root{
+  --bg: #1D1C1C;
+  --text-label: #A0A0A0;
+  --input-active: #484848;
+}
+
+
+.mainContainer{
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color:var(--bg);
+  padding: 20px;
+  border-radius: 16px;
+
+  min-height: 420px;
+
+  /* transition: all .20 ease-in-out; */
+}
