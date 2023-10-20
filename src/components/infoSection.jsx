@@ -1,16 +1,11 @@
-// import {Button} from './components/buttons.jsx'
 import {Input} from './inputs.jsx'
-import { Controls } from './controls.jsx'
-import { useState } from 'react';
-// import nextSvg from '../assets/images/next.svg'
-// import previusSvg from '../assets/images/previus.svg'
-// import trashSvg from '../assets/images/trash.svg'
-// import addSvg from '../assets/images/add.svg'
 import '../assets/styles/sections.css'
-function Info({text,setText}) {
+
+
+function Info({value,set}) {
     return(
 
-        <>
+        <form>
 
             <h2>Info</h2>
 
@@ -18,30 +13,44 @@ function Info({text,setText}) {
                 <Input 
                     label={'First Name'}
                     placeholder={'Masashi'}
-                    value={text}
-                    setText={setText}
+                    name={'info'}
+                    value={value.info.firstName}
+                    handleSetText={set}
+                    fieldName={'firstName'}
                 />
                 <Input 
                     label={'Last Name'}
                     placeholder={'Kishimoto'}
+                    name={'info'}
+                    value={value.info.lastName}
+                    handleSetText={set}
+                    fieldName={'lastName'}
                 />
             </div>
             
             <Input 
                     label={'Professional Title'}
                     placeholder={'Developer'}
+                    name={'info'}
+                    value={value.info.professionalTitle}
+                    handleSetText={set}
+                    fieldName={'professionalTitle'}
             />
             <label className='containerTextArea'>
                 Profile
             <textarea
                 
                 className='style-textArea'
+                name={'info'} 
+                placeholder={'nashe'}
+                value={value.info.profile}
+                onChange={e => set('info','profile',e.target.value)}
             />
 
             </label>          
 
             
-        </>
+        </form>
 
     )
 
