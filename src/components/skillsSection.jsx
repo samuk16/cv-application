@@ -6,58 +6,37 @@ import deleteSvg from '../assets/images/trash.svg'
 import { Button } from './buttons.jsx'
 import '../assets/styles/sections.css'
 
-function Skill() {
+function Skill({data,onClick,set,index,setIndex}) {
     
 
     return (
 
         <>
-
             <div className='titleAndBtn'>
                 <h2>Education</h2>
-                <Button svg={addSvg}/>
+                <Button svg={addSvg} handleClick={onClick} section={'skill'} />
             </div>
-
-            <div className='style-skill'>
-            <Input value={'Java'}/>
-            <Button 
-                svg={deleteSvg}
-            />
-            </div>
-            <div className='style-skill'>
-            <Input value={'Javascript'}/>
-            <Button 
-                svg={deleteSvg}
-            />
-            </div>
-            <div className='style-skill'>
-            <Input value={'Figma'}/>
-            <Button 
-                svg={deleteSvg}
-            />
-            </div>
-            <div className='style-skill'>
-            <Input value={'C++'}/>
-            <Button 
-                svg={deleteSvg}
-            />
-            </div>
-            <div className='style-skill'>
-            <Input value={'Python'}/>
-            <Button 
-                svg={deleteSvg}
-            />
-            </div>
-            <div className='style-skill'>
-            <Input value={'React'}/>
-            <Button 
-                svg={deleteSvg}
-            />
-            </div>          
 
             
-        </>
+            {
+                data.map((skill,idx) => (
+                    <div className='style-skill' key={idx}>
+                        <Input 
+                            value={skill.skillName} 
+                            handleSetText={set}
+                            placeholder={'Skill'}
+                            name={'skill'}
+                            fieldName={'skillName'}
+                            id={idx}
+                        
+                        />
+                        <Button svg={deleteSvg} />
+                    </div>
+                ))
+            }
 
+        
+        </>
     )
 }
 
