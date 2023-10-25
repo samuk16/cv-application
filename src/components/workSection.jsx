@@ -91,7 +91,7 @@ function Work({value,set,index,setIndex,data,onClick}) {
             />
 
             {
-                data.length > 1 ? <Controls svgRight={addSvg} index={index} setIndex={setIndex} data={data} /> : <Button svg={addSvg} handleClick={onClick} section={'work'}/>
+                data.length > 1 ? <Controls svgRight={addSvg} index={index} setIndex={setIndex} data={data} onClick={onClick} section={'work'} /> : <Button svg={addSvg} handleClick={onClick} section={'work'}/>
             }
         
             
