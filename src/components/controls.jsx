@@ -5,12 +5,12 @@ import { dataComponents } from '../assets/data.js'
 import '../assets/styles/controls.css'
 import { useState } from 'react'
 
-function Controls({svgRight = nextSvg,index,setIndex}) {
+function Controls({svgRight = nextSvg,index,setIndex,data,onClick,section}) {
     
      
 
     function handleNextClick() {
-        if (!(index >= dataComponents.length - 1)) {
+        if (!(index >= data.length - 1)) {
             setIndex( index + 1)
         }
     }
@@ -19,7 +19,8 @@ function Controls({svgRight = nextSvg,index,setIndex}) {
             setIndex( index - 1)
         }
     } 
-
+    // console.log(index)
+    // console.log(data.length)
     return(
 
 
@@ -31,20 +32,22 @@ function Controls({svgRight = nextSvg,index,setIndex}) {
             <div className='containerCircles'>
 
                 {
-                    dataComponents.map((_,idx) => (
+                    data.map((_,idx) => (
 
                         <div 
                             className={`style-circle  ${idx == index ? 'active' : ''}`}
                             key={idx}>
                         </div>
+                        
                     ))
-
+                    
                 }
     
             </div>
             <Button 
-                svg={svgRight}
-                handleClick={handleNextClick}
+                svg={index == (data.length -1) ? svgRight : nextSvg}
+                handleClick={index == (data.length -1) ? onClick : handleNextClick}
+                section={section}
             />
         </div>
     )
