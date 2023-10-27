@@ -2,13 +2,18 @@ import {Input} from './inputs.jsx'
 import { Controls } from './controls.jsx'
 import { Button } from './buttons.jsx'
 import addSvg from '../assets/images/add.svg'
+import trashSvg from '../assets/images/trash.svg'
 import '../assets/styles/sections.css'
 
-function FormWork({value,set,index}) {
+function FormWork({value,set,index,removeObj,setIndex,data}) {
     return (
 
         <form>
-                <h2>Work</h2>
+                <div className='titleAndBtn'>
+                    <h2>Work</h2>
+                    {data.length > 1 ? <Button svg={trashSvg} handleClick={removeObj} section={'work'} id={value.work[index].id} setIndex={setIndex} index={index} deleteItem={true} />  : ''}
+                    
+                </div>
 
                 <div className='style-twoInputs'>
                     <Input 
@@ -18,7 +23,7 @@ function FormWork({value,set,index}) {
                         value={value.work[index].title}
                         handleSetText={set}
                         fieldName={'title'}
-                        id={index}
+                        id={value.work[index].id}
                     />
                     <Input 
                         label={'Company'}
@@ -27,7 +32,7 @@ function FormWork({value,set,index}) {
                         value={value.work[index].company}
                         handleSetText={set}
                         fieldName={'company'}
-                        id={index}
+                        id={value.work[index].id}
 
                     />
                 </div>
@@ -41,7 +46,7 @@ function FormWork({value,set,index}) {
                         handleSetText={set}
                         fieldName={'from'}
                         type='number'
-                        id={index}
+                        id={value.work[index].id}
 
                     />
                     <Input 
@@ -52,7 +57,7 @@ function FormWork({value,set,index}) {
                         handleSetText={set}
                         fieldName={'to'}
                         type='number'
-                        id={index}
+                        id={value.work[index].id}
 
                     />
                 </div>
@@ -75,7 +80,7 @@ function FormWork({value,set,index}) {
     )
 }
 
-function Work({value,set,index,setIndex,data,onClick}) {
+function Work({value,set,index,setIndex,data,onClick,removeObj}) {
     
 
     return (
@@ -86,12 +91,15 @@ function Work({value,set,index,setIndex,data,onClick}) {
                 value={value}
                 set={set}
                 index={index}
+                data={data}
+                removeObj={removeObj}
+                setIndex={setIndex}
                 
 
             />
 
             {
-                data.length > 1 ? <Controls svgRight={addSvg} index={index} setIndex={setIndex} data={data} onClick={onClick} section={'work'} /> : <Button svg={addSvg} handleClick={onClick} section={'work'}/>
+                data.length > 1 ? <Controls svgRight={addSvg} index={index} setIndex={setIndex} data={data} onClick={onClick} section={'work'} /> : <Button classN={'addBtn'} svg={addSvg} handleClick={onClick} section={'work'}/>
             }
         
             
