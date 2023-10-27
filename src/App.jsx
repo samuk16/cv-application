@@ -48,6 +48,18 @@ function App() {
     
 
   }
+  function removeObj(section,id) {
+    
+    const updatedInputValues = {... inputsValues};
+    const objSelected = updatedInputValues[section].find((obj) => obj.id === id );
+
+    const newArray = updatedInputValues[section].filter( obj => 
+        obj.id !== objSelected.id
+    );
+   
+    updatedInputValues[section] = newArray
+    setInputValues(updatedInputValues)
+  }
   function handleSetInputValues(section,fieldName,value,id) {
 
     if (section == 'info' || section == 'contact') {
@@ -113,6 +125,7 @@ function App() {
         setIndex={setIndexControlSection}
         data={dataArr}
         onClick = {addNewForm}
+        removeObj={removeObj}
       />
       <Controls 
         index={index}
