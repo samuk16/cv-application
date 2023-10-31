@@ -4,11 +4,13 @@ import { Controls } from './components/controls'
 import { Info } from './components/infoSection'
 import { Contact } from './components/contactSection'
 import { Education } from './components/educationSection'
+import { Preview } from './components/previewCv'
 import { Work } from './components/workSection'
 import { Skill } from './components/skillsSection'
 import { dataComponents } from './assets/data'
 import saveSvg from './assets/images/download.svg'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 function App() {
 
@@ -90,25 +92,31 @@ function App() {
   }
   
   let Nashe = Info;
+  let testName;
   let indexControlSection;
   let setIndexControlSection;
   let dataArr;
   if (index == 0) {
     Nashe = Info;
+    testName = 'info';
   }else if(index == 1){
     Nashe = Contact;    
+    testName = 'contact';
   }else if(index == 2){
-    Nashe = Education;    
+    Nashe = Education; 
+    testName = 'education';   
     dataArr = inputsValues.education
     indexControlSection = indexEducation;
     setIndexControlSection = setIndexEducation;
   }else if(index == 3){
     Nashe = Work;
+    testName = 'work';
     dataArr = inputsValues.work    
     indexControlSection = indexWork;
     setIndexControlSection = setIndexWork;
   }else if(index == 4){
     Nashe = Skill;    
+    testName = 'skill';
     dataArr = inputsValues.skill
     indexControlSection = indexSkill;
     setIndexControlSection = setIndexSkill;
@@ -116,25 +124,29 @@ function App() {
 
 
   return (
-    
     <>
-      <Nashe 
-        value={inputsValues}
-        set={handleSetInputValues}
-        index={indexControlSection}
-        setIndex={setIndexControlSection}
-        data={dataArr}
-        onClick = {addNewForm}
-        removeObj={removeObj}
-      />
-      <Controls 
-        index={index}
-        setIndex={setIndex}
-        data={dataComponents}
-        svgRight={saveSvg}
-      />
+      <motion.div className='cvEditor' animate={{width: testName == 'skill' ? '233px' : '388px'}}>
+        <Nashe 
+          value={inputsValues}
+          set={handleSetInputValues}
+          index={indexControlSection}
+          setIndex={setIndexControlSection}
+          data={dataArr}
+          onClick = {addNewForm}
+          removeObj={removeObj}
+        />
+        <Controls 
+          index={index}
+          setIndex={setIndex}
+          data={dataComponents}
+          svgRight={saveSvg}
+        />
+      </motion.div>
+      
+      <Preview value={inputsValues} />
+      
     </>
-
+    
     
   )
 }
