@@ -1,0 +1,5 @@
+export { InfoForm } from './InfoForm.jsx'
+export { ContactForm } from './ContactForm.jsx'
+export { EducationForm } from './EducationForm.jsx'
+export { WorkForm } from './WorkForm.jsx'
+export { SkillForm } from './SkillForm.jsx'
