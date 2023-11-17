@@ -1,0 +1,45 @@
+
+:root{
+
+    --circle-active: #727272
+
+}
+.style-controls{
+    justify-self: center;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+
+}
+
+.style-circle{
+
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: #2D2D2D;
+    transform-origin: center center;
+    transition: all .15s ease-in-out;
+
+
+}
+
+.containerCircles{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px 4px;
+    min-width: 78px;
+}
+
+.active{
+
+    width: 10px;
+    height: 10px;
+    background-color: var(--circle-active);
+
+
+}
