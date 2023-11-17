@@ -1,21 +1,46 @@
-:root{
+:root {
   --bg: #1D1C1C;
   --text-label: #A0A0A0;
   --input-active: #484848;
 }
 
+.mainContainer {
 
-.mainContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cvEditor {
 
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  background-color:var(--bg);
+  background-color: var(--bg);
   padding: 20px;
   border-radius: 16px;
 
   min-height: 420px;
+  max-height: 420px;
+}
 
-  /* transition: all .20 ease-in-out; */
+.previewCvContainer {
+  height: 100vh !important;
+  max-width: 55vw;
+  min-width: 55vw;
+}
+
+.containerBtns {
+
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+}
+
+.containerComponent {
+  position: relative;
 }

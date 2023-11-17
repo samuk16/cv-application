@@ -1,34 +1,35 @@
-.cvPreview{
+.cvPreview {
 
-    background-color: aliceblue;
-    height: 100vh;
-
-    width: 700px;
+    background-color: white;
+    height: 1100px;
+    width: 800px;
 }
 
-p{
+p {
     color: black;
     margin: 0;
     font-size: small;
 }
 
-h1{
+h1 {
     color: white;
     margin: 0;
 
 }
 
-h3{
+h3 {
     color: black;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-h4,h5{
+h4,
+h5 {
     color: black;
     margin: 0;
 }
-header{
+
+header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,23 +39,24 @@ header{
     height: 120px;
 }
 
-.subTitle{
+.subTitle {
     color: white;
     font-weight: lighter;
 }
 
-.contact{
+.contact {
 
     border-right: solid 1px black;
 }
 
-.itemContact{
+.itemContact {
     display: flex;
     gap: 5px;
+    align-items: center;
 }
 
 
-.items{
+.items {
 
     display: flex;
     flex-direction: column;
@@ -64,19 +66,20 @@ header{
 
 }
 
-ul{
+ul {
 
     margin: 0;
     padding-inline-start: 17px;
     font-size: small;
 
 }
-.containerSides{
+
+.containerSides {
     display: flex;
     gap: 30px;
 }
 
-.mainSection{
+.mainSection {
 
     padding: 40px 40px 40px 40px;
     display: flex;
@@ -85,7 +88,13 @@ ul{
 
 }
 
-.experience,.profile,.education,.sideLeft, .sideRight,.contact,.skill{
+.experience,
+.profile,
+.education,
+.sideLeft,
+.sideRight,
+.contact,
+.skill {
 
     display: flex;
     flex-direction: column;
@@ -93,9 +102,22 @@ ul{
 
 }
 
-.education,.skill{
+.education,
+.skill {
 
     border-right: solid 1px black;
     padding-right: 30px;
 
+}
+
+.sideLeft {
+
+    max-width: 180px;
+    min-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.iconPreview {
+    min-width: 16px;
 }

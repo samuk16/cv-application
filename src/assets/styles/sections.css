@@ -1,37 +1,35 @@
-:root{
+:root {
     --bg: #1D1C1C;
     --text-label: #A0A0A0;
     --input-active: #484848;
 }
 
-.style-section{
+.style-section {
     display: flex;
     flex-direction: column;
     gap: 10px;
-   
-
-    /* justify-content: space-between; */
     border-radius: 16px;
-    background-color:var(--bg);
+    background-color: var(--bg);
     padding: 20px;
 }
 
-.style-textArea{
+.style-textArea {
     border-radius: 8px;
     outline: none;
     border: none;
     resize: none;
     padding: 10px;
     height: 70px;
-    transition: all .15s ease-in-out;
 
 }
-.style-textArea:focus{
 
-    background-color:var(--input-active);
+.style-textArea:focus {
+
+    background-color: var(--input-active);
 
 }
-.containerTextArea{
+
+.containerTextArea {
 
     display: flex;
     flex-direction: column;
@@ -39,7 +37,7 @@
     color: var(--text-label);
 }
 
-.titleAndBtn{
+.titleAndBtn {
 
     display: flex;
     justify-content: space-between;
@@ -47,9 +45,21 @@
 
 }
 
-.style-skill{
+.style-skill {
 
     display: flex;
     gap: 10px;
 
+}
+
+.carrouselForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.containerSkills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

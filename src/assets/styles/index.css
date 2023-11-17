@@ -23,69 +23,63 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
   margin: 0;
-  display: flex;
-  /* place-items: center; */
-  /* min-width: 100vw; */
-  min-height: 100vh;
-  width: 100vw;
+}
 
+h2 {
+  color: white;
+  margin: 0
+}
+
+#root {
+
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-} */
-
-h2{
-
-  margin: 0
-
-}
-#root{
-
-  display: flex;
   gap: 20px;
+  width: 100vw;
+  height: 100vh;
+
 
 }
 
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.switchBtn {
+  position: absolute;
+  top: 30px;
+  z-index: 2;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media (max-width:1005px) {
+
+  .mainContainer {
+    flex-direction: column;
+    gap: 20px;
   }
-  a:hover {
-    color: #747bff;
+
+  .previewCvContainer {
+    max-width: 100vw !important;
+    min-width: 100vw !important;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+
+
 }
 
+@media (max-width:498px) {
 
+  .cvEditor {
+    max-width: 388px;
+    width: auto !important;
+  }
+
+  .carrouselForm {
+
+    max-width: 388px;
+    width: auto !important;
+  }
+}

@@ -1,11 +1,11 @@
-:root{
+:root {
     --text-label: #A0A0A0;
     --btn-active: #484848;
     --text-label-active: #484848;
 }
 
 
-.style-label{
+.style-label {
 
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     color: var(--text-label);
 }
 
-.containerInputs{
+.containerInputs {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -24,34 +24,35 @@
 
 }
 
-.style-label > input{
+.style-label>input {
 
 
     border-radius: 8px;
     padding: 10px;
     border-style: none;
     outline: none;
-    transition: all .15s ease-in-out;
 
 }
 
-.style-label > input:focus{
+.style-label>input:focus {
 
     outline-color: #1D1C1C;
-    background-color:var(--btn-active);
+    background-color: var(--btn-active);
 
 }
-/* .style-label:focus-within {
 
-    color: var(--text-label-active);
-
-} */
-
-.containerName,.style-twoInputs{
+.containerName,
+.style-twoInputs {
 
     display: flex;
     gap: 10px;
-
-
 }
 
+.containerName>label>input {
+    width: 90%;
+    /* color: aqua; */
+}
+
+.style-twoInputs>label>input {
+    width: 90%;
+}

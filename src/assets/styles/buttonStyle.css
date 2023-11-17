@@ -1,16 +1,16 @@
-:root{
+:root {
     --btn-active: #3F3F3F;
-    
+
 }
 
 
-.style-btn{
+.style-btn {
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: #2D2D2D;
+    background-color: transparent;
 
     padding: 5px;
 
@@ -23,13 +23,12 @@
 
 }
 
-/* .style-btn:active{
 
-    background-color:var(--btn-active);
-} */
+.style-btn:hover {
 
-.style-btn:hover{
-
-    background-color:var(--btn-active);
+    background-color: var(--btn-active);
 }
 
+.addBtn {
+    margin: 0 auto;
+}
