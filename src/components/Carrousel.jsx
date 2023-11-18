@@ -6,7 +6,7 @@ import '../assets/styles/carrousel.css'
 
 
 
-function Carrousel({ index, setIndex, length, saveCvFn, children, addLimit, value, setValue, classVariant, variant }) {
+function Carrousel({ index, setIndex, length, saveCvFn, children, addLimit, value, setValue, classVariant, variant, setToggle, wrapperRef }) {
 
     function handleNextClick() {
         if (!(index >= length - 1)) {
@@ -22,6 +22,19 @@ function Carrousel({ index, setIndex, length, saveCvFn, children, addLimit, valu
 
     function saveCv() {
         const targeCv = document.querySelector('.containerCv');
+        const editorCv = document.querySelector('.cvEditor');
+        const containerBtns = document.querySelector('.containerBtns');
+        const btnSwitch = document.querySelector('.btnCv');
+        editorCv.style.transform = 'scale(0.5)';
+        editorCv.style.display = 'none';
+        btnSwitch.classList.add('switchBtn');
+
+        wrapperRef.current.instance.wrapperComponent.style.display = 'block';
+        containerBtns.style.display = 'flex';
+        wrapperRef.current.resetTransform();
+
+        setToggle(false);
+
         targeCv.style.transform = 'scale(1)';
         saveCvFn()
     }
@@ -30,7 +43,6 @@ function Carrousel({ index, setIndex, length, saveCvFn, children, addLimit, valu
         <motion.div
             className={classVariant}
             initial={{ opacity: 0, scale: 0.5, }}
-            // animate={{ opacity: 1, scale: 1, maxWidth: index === 4 ? '233px' : '388px', }}
             animate={{ opacity: 1, scale: 1, width: index === 4 ? '233px' : '388px', }}
         >
             <AnimatePresence mode='wait'>

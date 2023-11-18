@@ -36,7 +36,7 @@ function App() {
   };
 
   const [seeBtnCv, setSeeBtnCv] = useState(false);
-  const [test, setTest] = useState(true);
+  const [toggle, setToggle] = useState(true);
 
 
   const transformWrapperRef = useRef(null);
@@ -138,7 +138,7 @@ function App() {
     let wrapperHeight = transformWrapperRef.current.instance.wrapperComponent.clientHeight;
     const displayWrapper = window.getComputedStyle(transformWrapperRef.current.instance.wrapperComponent).display;
 
-    if (test) {
+    if (toggle) {
 
       editorCv.style.transform = 'scale(0.5)';
       editorCv.style.display = 'none';
@@ -148,7 +148,7 @@ function App() {
       containerBtns.style.display = 'flex';
       transformWrapperRef.current.resetTransform();
 
-      setTest(false);
+      setToggle(false);
 
     } else {
 
@@ -169,7 +169,7 @@ function App() {
       }
 
       btnSwitch.classList.remove('switchBtn');
-      setTest(true);
+      setToggle(true);
 
     }
 
@@ -179,7 +179,7 @@ function App() {
 
   return (
     <>
-      <Carrousel classVariant='cvEditor' index={index} setIndex={setIndex} length={5} saveCvFn={() => generatePDF(getTargetElement, options)} transformWrapperRef={transformWrapperRef}>
+      <Carrousel classVariant='cvEditor' index={index} setIndex={setIndex} length={5} saveCvFn={() => generatePDF(getTargetElement, options)} transformWrapperRef={transformWrapperRef} setToggle={setToggle} wrapperRef={transformWrapperRef}>
         {index == 0 && <InfoForm key={'info'} value={infoValue} setValue={setInfoValue} />}
         {index == 1 && <ContactForm key={'contact'} value={contactValue} setValue={setContactValue} />}
         {index == 2 && <EducationForm key={'education'} value={educationValue} setValue={setEducationValue} index={indexEducation} setIndex={setIndexEducation} length={educationValue.length} />}
@@ -190,7 +190,7 @@ function App() {
         seeBtnCv &&
 
         <Button
-          children={test ? <IconFileInvoice size={24} color='#A0A0A0' /> : <IconArrowBackUp size={24} color='#A0A0A0' />}
+          children={toggle ? <IconFileInvoice size={24} color='#A0A0A0' /> : <IconArrowBackUp size={24} color='#A0A0A0' />}
           onClick={seePreview}
           classN={'btnCv'}
         />
