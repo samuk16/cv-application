@@ -79,6 +79,7 @@ function Carrousel({ index, setIndex, length, saveCvFn, children, addLimit, valu
                         <Button
                             children={<IconDownload size={24} color='#A0A0A0' />}
                             onClick={saveCv}
+                            classN={'btnCv'}
                         /> :
                         <Button
                             disabled={index == (length - 1)}
